@@ -1,7 +1,7 @@
 function* idMaker() {
-    for (let i = 0; ; i++) {
-        yield i;
-    }
+  for (let i = 0;; i++) {
+    yield i;
+  }
 }
 
 const gen = idMaker();

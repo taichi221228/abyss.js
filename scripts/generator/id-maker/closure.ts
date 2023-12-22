@@ -1,7 +1,7 @@
-const idMaker = (() => {
-    let i = 0;
-    return {next: () => ({value: i++})};
-})
+const idMaker = () => {
+  let i = 0;
+  return { next: () => ({ value: i++ }) };
+};
 
 const gen = idMaker();
 

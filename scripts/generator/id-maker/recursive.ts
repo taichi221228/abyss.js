@@ -1,5 +1,5 @@
 function* idMaker(i = 0): Generator<number> {
-    yield* idMaker(i + 1);
+  yield* idMaker(i + 1);
 }
 
 const gen = idMaker();
