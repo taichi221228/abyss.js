@@ -1,4 +1,4 @@
-import { generatorWithClosure } from "../generator.ts";
+import { generatorWithClosure } from "../generatorWithClosure.ts";
 
 const gen = generatorWithClosure(
   0,
