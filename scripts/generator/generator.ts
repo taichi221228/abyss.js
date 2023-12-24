@@ -15,7 +15,7 @@ export const generatorWithClosure = <T, TReturn, TNext>(
 
   return ({
     next: (..._args): IteratorResult<T, TReturn> => {
-      if (predicate(state)) {
+      if (predicate($state.value)) {
         return { value: undefined as TReturn, done: true };
       } else {
         const { value } = $update();
