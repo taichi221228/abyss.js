@@ -2,7 +2,8 @@ export const generatorWithClosure = <T, TReturn, TNext>(
   state: TNext,
   update: (state: TNext) => { value: T; next: TNext },
   predicate: (state: TNext) => boolean,
-): Generator<T, TReturn, TNext> => {
+): () => Generator<T, TReturn, TNext> =>
+() => {
   const $state = {
     value: state,
   };
