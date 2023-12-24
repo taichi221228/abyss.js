@@ -14,7 +14,7 @@ export const generatorWithClosure = <T, TReturn, TNext>(
   };
 
   return ({
-    next(..._args): IteratorResult<T, TReturn> {
+    next: (..._args): IteratorResult<T, TReturn> => {
       if (predicate(state)) {
         return { value: undefined as TReturn, done: true };
       } else {
@@ -22,12 +22,16 @@ export const generatorWithClosure = <T, TReturn, TNext>(
         return { value, done: false };
       }
     },
-    return(value: TReturn): IteratorResult<T, TReturn> {
-      return { value, done: true };
-    },
-    throw(e: Error): IteratorResult<T, TReturn> {
+
+    return: (value: TReturn): IteratorResult<T, TReturn> => ({
+      value,
+      done: true,
+    }),
+
+    throw: (e: Error): IteratorResult<T, TReturn> => {
       throw e;
     },
+
     [Symbol.iterator]: function () {
       return this;
     },
