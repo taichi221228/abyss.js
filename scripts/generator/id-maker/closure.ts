@@ -1,9 +1,10 @@
-const idMaker = () => {
-  let i = 0;
-  return { next: () => ({ value: i++ }) };
-};
+import { generatorWithClosure } from "../generator.ts";
 
-const gen = idMaker();
+const gen = generatorWithClosure(
+  0,
+  (i) => ({ value: i, next: i + 1 }),
+  (i) => i > 10,
+);
 
 /**
  * @return {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
