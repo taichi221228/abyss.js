@@ -1,7 +1,7 @@
 export const generatorWithClosure = <T, TReturn, TNext>(
-  state: TNext,
-  update: (state: TNext) => { value: T; next: TNext },
-  predicate: (state: TNext) => boolean,
+  state: T,
+  update: (state: T) => { value: T; next: TNext },
+  predicate: (state: T) => boolean,
 ): () => Generator<T, TReturn, TNext> =>
 () => {
   const $state = {
@@ -14,7 +14,7 @@ export const generatorWithClosure = <T, TReturn, TNext>(
         return { value: undefined as TReturn, done: true };
       } else {
         const { value, next } = update($state.value);
-        $state.value = next;
+        $state.value = next as unknown as T;
         return { value, done: false };
       }
     },
