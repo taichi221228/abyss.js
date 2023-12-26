@@ -1,3 +1,11 @@
+/**
+ * O(1) is the best time complexity.
+ *
+ * @param {number[]} arr - The array to log the element from.
+ * @param {keyof typeof arr} i - The index of the element to log.
+ * @returns {void}
+ */
+
 const log = (arr: number[], i: keyof typeof arr) => {
     console.log(arr[i]);
 }
