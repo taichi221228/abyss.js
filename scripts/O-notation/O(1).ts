@@ -6,7 +6,7 @@
  * @returns {void}
  */
 
-const log = (arr: number[], i: keyof typeof arr) => {
+const log = (arr: number[], i   : keyof typeof arr): void => {
     console.log(arr[i]);
 }
 
