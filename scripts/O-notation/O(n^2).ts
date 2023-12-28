@@ -14,5 +14,5 @@ const addAndLog = (arr: number[]): void => {
     });
 }
 
-addAndLog([...Array(100)].map((_, i) => i));
+addAndLog([...Array(10000)].map((_, i) => i)); // Boom! This will take a long time to run.
 addAndLog([...Array(10)].map((_, i) => i));
