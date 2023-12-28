@@ -1,9 +1,4 @@
-/**
- * O(n) is proportional to the size of the input.
- *
- * @param {number[]} arr - The array of numbers to log.
- * @returns {void}
- */
+// O(n) is proportional to the size of the input.
 
 const logAll = (arr: number[]): void => {
     arr.forEach((_, i) => console.log(arr[i]));

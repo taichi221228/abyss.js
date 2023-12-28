@@ -1,10 +1,5 @@
-/**
- * O(n^2) is proportional to the square of the size of the input.
- * This is an algorithm that is not very efficient for large inputs.
- *
- * @param {number[]} arr - The array of numbers to log.
- * @returns {void}
- */
+// O(n^2) is proportional to the square of the size of the input.
+// This is an algorithm that is not very efficient for large inputs.
 
 const addAndLog = (arr: number[]): void => {
     arr.forEach((_, i) => {
